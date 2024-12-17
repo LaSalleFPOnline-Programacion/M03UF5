@@ -100,28 +100,11 @@ public class pantallaCarreraController {
                 actualizarCaballoEnVista(paloPenalizacion, posicionPenalizacion, posicionPenalizacion - 1);
             }
             esFinPartida = juego.finPartida();
+        } else {
+            cargarVistaGanador();
         }
         juego.chequearGanador();
-        cargarVistaGanador();
 
-    }
-
-    public void cargarVistaGanador() throws IOException {
-
-        if(!juego.finPartida()) {
-            FXMLLoader fxmlLoader = new FXMLLoader(carreraCaballos.class.getResource("views/pantallaGanador.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            pantallaGanadorController controller = fxmlLoader.getController();
-
-            if (!juego.quedanCartas()) {
-                controller.setCaballoGanador("Fin. No hay ganador");
-                ;
-            } else {
-                controller.setCaballoGanador("¡El caballo ganador es: " + juego.obtenerCaballoGanador().toString() + "!");
-            }
-            controller.setStage(stage);
-            stage.setScene(scene);
-        }
     }
 
     public void actualizarCaballoEnVista(CardSuit suit, int posicionActual, int posicionSiguiente) {
@@ -141,6 +124,23 @@ public class pantallaCarreraController {
         String cardName = carta.toString();
         String cardSuit = carta.getCardSuit().toString();
         return "/org/example/m03uf5/images/" + cardName + "_" + cardSuit + ".png";
+    }
+
+    public void cargarVistaGanador() throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(carreraCaballos.class.getResource("views/pantallaGanador.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        pantallaGanadorController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+
+        if (!juego.quedanCartas()) {
+            controller.setCaballoGanador("Fin. No hay ganador");
+        } else {
+            controller.setCaballoGanador("¡El caballo ganador es: " + juego.obtenerCaballoGanador().toString() + "!");
+            String url = Objects.requireNonNull(getClass().getResource("/org/example/m03uf5/images/KNIGHT_" + juego.obtenerCaballoGanador().toString() + ".png")).toExternalForm();
+            controller.setImagenCaballoGanador(url);
+        }
+        stage.setScene(scene);
     }
 
 }
