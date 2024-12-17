@@ -14,9 +14,7 @@ import javafx.scene.control.Alert.AlertType;
 import java.io.IOException;
 
 public class pantallaApuestasController {
-
     private Juego juego;
-
     @FXML
     private TextField nombreJugador;
     @FXML
