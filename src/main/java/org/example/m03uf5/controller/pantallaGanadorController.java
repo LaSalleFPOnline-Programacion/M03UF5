@@ -19,12 +19,14 @@ public class pantallaGanadorController {
     @FXML
     private ImageView imagenCaballoGanador;
     @FXML
+    private Label nombreGanadores;
+    @FXML
     public void salirJuego() {
         stage.close();
     }
 
-    public void setCaballoGanador(String nombreCaballo) {
-        caballoGanador.setText(nombreCaballo);
+    public void setCaballoGanador(String texto) {
+        caballoGanador.setText(texto);
     }
 
     public void setImagenCaballoGanador(String urlImagen) {
@@ -34,6 +36,10 @@ public class pantallaGanadorController {
         } catch (IllegalArgumentException e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+    }
+
+    public void setNombreGanadores(String texto) {
+        nombreGanadores.setText(texto);
     }
 }
 

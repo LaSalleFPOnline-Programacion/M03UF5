@@ -1,5 +1,8 @@
 package org.example.m03uf5.model;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -193,8 +196,36 @@ public class Juego {
 
         Card carta = baraja.getCardFromDeck();
         descartes.addCard(carta);
+        escribirDescarteEnFichero(carta);
         baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
         return carta;
+    }
+
+    /**
+     * Guarda la información de la carta descartada en un fichero de texto.
+     * @param carta
+     */
+    private void escribirDescarteEnFichero(Card carta) {
+        String rutaFichero = "descartes.txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaFichero, true))) {
+            writer.write("Carta descartada: " + carta.getDescription());
+            writer.newLine();
+        } catch (IOException e) {
+            System.err.println("Error al escribir en el archivo de descartes: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Vacía el contenido del fichero de texto.
+     */
+    public void limpiarFicheroDescartes() {
+        String rutaFichero = "descartes.txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaFichero))) {
+            // Al abrir el archivo sin "append", se limpia su contenido
+            writer.write(""); // Escribe una cadena vacía para resetear el archivo
+        } catch (IOException e) {
+            System.err.println("Error al limpiar el archivo de descartes: " + e.getMessage());
+        }
     }
 
     /**
@@ -342,6 +373,29 @@ public class Juego {
         }
         return null;
     }
+
+    public String obtenerGanador(CardSuit caballoGanador) {
+        boolean hayGanador = false;
+        int totalGanadores = 0;
+        StringBuilder ganadores = new StringBuilder(); // StringBuilder para construir la cadena
+
+        for (Jugador jugador : jugadores) {
+            if (jugador.getCaballoApuesta() == caballoGanador) {
+                ganadores.append(jugador.getNombreJugador()).append(" ha ganado.\n"); // Concatenar nombre
+                totalGanadores++;
+                hayGanador = true;
+            }
+        }
+
+        if (!hayGanador) {
+            return "Ningún jugador apostó por el caballo ganador.";
+        } else {
+            // Añadir el bote al mensaje final
+            ganadores.append("Cada ganador se lleva ").append(bote / totalGanadores).append(" puntos.");
+            return ganadores.toString(); // Convertir StringBuilder a String
+        }
+    }
+
     public Card getCartaTablero(int i, int j) {
         return this.tablero[i][j];
     }

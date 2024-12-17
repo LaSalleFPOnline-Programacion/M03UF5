@@ -40,6 +40,7 @@ public class pantallaApuestasController {
             elegirCaballo.getItems().add(suit.toString());
         }
         juego = new Juego();
+        juego.limpiarFicheroDescartes();
     }
 
     @FXML
@@ -66,14 +67,6 @@ public class pantallaApuestasController {
                     break;
             }
         }
-    }
-
-    @FXML
-    public void volver()  throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(carreraCaballos.class.getResource("views/pantallaInicio.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Carrera de caballos");
-        stage.setScene(scene);
     }
 
     @FXML

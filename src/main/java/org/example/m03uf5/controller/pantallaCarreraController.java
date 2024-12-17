@@ -136,9 +136,11 @@ public class pantallaCarreraController {
         if (!juego.quedanCartas()) {
             controller.setCaballoGanador("Fin. No hay ganador");
         } else {
-            controller.setCaballoGanador("¡El caballo ganador es: " + juego.obtenerCaballoGanador().toString() + "!");
+            controller.setCaballoGanador("¡El caballo ganador es " + juego.obtenerCaballoGanador().toString() + "!");
             String url = Objects.requireNonNull(getClass().getResource("/org/example/m03uf5/images/KNIGHT_" + juego.obtenerCaballoGanador().toString() + ".png")).toExternalForm();
             controller.setImagenCaballoGanador(url);
+            controller.setNombreGanadores(juego.obtenerGanador(juego.obtenerCaballoGanador()));
+
         }
         stage.setScene(scene);
     }
