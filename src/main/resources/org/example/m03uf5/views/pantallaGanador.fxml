@@ -6,32 +6,32 @@
 <?import javafx.scene.text.*?>
 
 <BorderPane prefHeight="512.0" prefWidth="332.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.m03uf5.controller.pantallaInicioController">
-<center>
-    <StackPane>
-         <VBox alignment="CENTER" prefHeight="378.0" prefWidth="613.0">
+    <top>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: darkgreen;" BorderPane.alignment="CENTER">
             <children>
-              <ImageView fitHeight="201.0" fitWidth="135.0" />
-               <Label text="Label">
-                  <font>
-                     <Font size="15.0" />
-                  </font>
-               </Label>
+                <Label fx:id="caballoGanador" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="xxx" textFill="WHITE" />
             </children>
-         </VBox>
-    </StackPane>
-</center>
-   <bottom>
-      <HBox alignment="CENTER" prefHeight="0.0" prefWidth="538.0" style="-fx-background-color: darkgreen;" BorderPane.alignment="CENTER">
-         <children>
-            <Button onAction="#salirJuego" prefHeight="39.0" prefWidth="142.0" style="-fx-font-size: 18px;" text="Salir" />
+        </HBox>
+    </top>
+    <center>
+        <StackPane>
+            <VBox alignment="CENTER" prefHeight="378.0" prefWidth="613.0">
+                 <children>
+                    <ImageView fitHeight="201.0" fitWidth="135.0" />
+                    <Label fx:id="nombreGanadores" text="Label">
+                       <font>
+                          <Font size="15.0" />
+                      </font>
+                   </Label>
+                </children>
+             </VBox>
+        </StackPane>
+    </center>
+    <bottom>
+       <HBox alignment="CENTER" prefHeight="0.0" prefWidth="538.0" style="-fx-background-color: darkgreen;" BorderPane.alignment="CENTER">
+          <children>
+             <Button onAction="#salirJuego" prefHeight="39.0" prefWidth="142.0" style="-fx-font-size: 18px;" text="Salir" />
          </children>
       </HBox>
    </bottom>
-   <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: darkgreen;" BorderPane.alignment="CENTER">
-         <children>
-            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="¡El caballo ganador es!" textFill="WHITE" />
-         </children>
-      </HBox>
-   </top>
 </BorderPane>

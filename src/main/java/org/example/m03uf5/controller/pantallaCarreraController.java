@@ -1,14 +1,18 @@
 package org.example.m03uf5.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import org.example.m03uf5.carreraCaballos;
 import org.example.m03uf5.model.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
@@ -74,16 +78,12 @@ public class pantallaCarreraController {
         linea5.setStrokeWidth(5);
         linea5.getStrokeDashArray().addAll(10.0, 10.0);
     }
-    public void setStage(Stage stage) {
-
-        this.stage = stage;
-    }
-
+    public void setStage(Stage stage) { this.stage = stage; }
     public void setJuego(Juego juego) {
         this.juego = juego;
     }
     @FXML
-    public void levantarCarta() {
+    public void levantarCarta() throws IOException {
 
         if (!esFinPartida) {
             Card carta = juego.levantarCarta();
@@ -102,7 +102,26 @@ public class pantallaCarreraController {
             esFinPartida = juego.finPartida();
         }
         juego.chequearGanador();
+        cargarVistaGanador();
 
+    }
+
+    public void cargarVistaGanador() throws IOException {
+
+        if(!juego.finPartida()) {
+            FXMLLoader fxmlLoader = new FXMLLoader(carreraCaballos.class.getResource("views/pantallaGanador.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            pantallaGanadorController controller = fxmlLoader.getController();
+
+            if (!juego.quedanCartas()) {
+                controller.setCaballoGanador("Fin. No hay ganador");
+                ;
+            } else {
+                controller.setCaballoGanador("¡El caballo ganador es: " + juego.obtenerCaballoGanador().toString() + "!");
+            }
+            controller.setStage(stage);
+            stage.setScene(scene);
+        }
     }
 
     public void actualizarCaballoEnVista(CardSuit suit, int posicionActual, int posicionSiguiente) {

@@ -307,16 +307,10 @@ public class Juego {
       */
     public void chequearGanador() {
 
-        if (baraja.totalCartas() == 0) {
+        if (!quedanCartas()) {
             System.out.println("Fin. No hay ganador.");
         } else {
-            CardSuit caballoGanador = null;
-            for (int j = 0; j < MAX_COLUMNAS - 1; j++) {
-                if (tablero[0][j] != null) {
-                    caballoGanador = tablero[0][j].suit;
-                    break;
-                }
-            }
+            CardSuit caballoGanador = obtenerCaballoGanador();
             System.out.println("¡El caballo ganador es: " + caballoGanador + "!");
             boolean hayGanador = false;
             int totalGanadores = 0;
@@ -336,6 +330,18 @@ public class Juego {
 
     }
 
+    public boolean quedanCartas() {
+        return baraja.totalCartas() > 0;
+    }
+
+    public CardSuit obtenerCaballoGanador() {
+        for (int j = 0; j < MAX_COLUMNAS - 1; j++) {
+            if (tablero[0][j] != null) {
+                return tablero[0][j].suit;
+            }
+        }
+        return null;
+    }
     public Card getCartaTablero(int i, int j) {
         return this.tablero[i][j];
     }
