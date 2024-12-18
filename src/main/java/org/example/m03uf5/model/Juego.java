@@ -12,7 +12,7 @@ import org.example.m03uf5.controller.pantallaCarreraController;
  */
 public class Juego {
 
-    private final int ACORTAR_TABLERO = 6;
+    private final int ACORTAR_TABLERO = 0;
     private final int MAX_FILAS = 11 - ACORTAR_TABLERO;
     private final int MAX_COLUMNAS = 5;
     private final int NUM_FILAS_PENALIZACIONES = 8 - ACORTAR_TABLERO;
@@ -221,8 +221,7 @@ public class Juego {
     public void limpiarFicheroDescartes() {
         String rutaFichero = "descartes.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaFichero))) {
-            // Al abrir el archivo sin "append", se limpia su contenido
-            writer.write(""); // Escribe una cadena vacía para resetear el archivo
+            writer.write("");
         } catch (IOException e) {
             System.err.println("Error al limpiar el archivo de descartes: " + e.getMessage());
         }
@@ -374,7 +373,7 @@ public class Juego {
         return null;
     }
 
-    public String obtenerGanador(CardSuit caballoGanador) {
+        public String obtenerGanador(CardSuit caballoGanador) {
         boolean hayGanador = false;
         int totalGanadores = 0;
         StringBuilder ganadores = new StringBuilder(); // StringBuilder para construir la cadena
