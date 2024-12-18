@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import org.example.m03uf5.carreraCaballos;
 import org.example.m03uf5.model.Juego;
 import org.example.m03uf5.model.Card;
+import org.example.m03uf5.model.CardSuit;
 import java.io.IOException;
 import java.util.Objects;
 
