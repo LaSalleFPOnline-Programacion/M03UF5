@@ -7,7 +7,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.m03uf5.carreraCaballos;
-import org.example.m03uf5.model.*;
+import org.example.m03uf5.model.Juego;
+import org.example.m03uf5.model.Jugador;
+import org.example.m03uf5.model.CardSuit;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 

@@ -10,10 +10,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import org.example.m03uf5.carreraCaballos;
-import org.example.m03uf5.model.*;
-
+import org.example.m03uf5.model.Juego;
+import org.example.m03uf5.model.Card;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Objects;
 
 public class pantallaCarreraController {
