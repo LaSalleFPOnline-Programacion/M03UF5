@@ -276,7 +276,7 @@
                   <Label fx:id="textoCaballoAvanza" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="329.0" style="-fx-font-size: 18px;" text="" textAlignment="CENTER" GridPane.columnIndex="2" />
                   <ImageView fx:id="cartaLevantada" fitHeight="72.0" fitWidth="46.0" GridPane.columnIndex="1">
                      <image>
-                        <Image url="@../images/KNIGHT_GOLD.png" />
+                        <Image url="@../images/0.png" />
                      </image>
                   </ImageView>
                </children>

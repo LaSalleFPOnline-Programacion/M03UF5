@@ -19,7 +19,7 @@
                  <children>
                     <ImageView fx:id="imagenCaballoGanador" fitHeight="201.0" fitWidth="135.0">
                         <image>
-                            <Image url="@../images/KNIGHT_GOLD.png" />
+                            <Image url="@../images/0.png" />
                         </image>
                     </ImageView>
                     <Label fx:id="nombreGanadores" text="Label">
