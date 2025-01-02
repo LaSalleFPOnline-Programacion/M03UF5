@@ -11,7 +11,6 @@ import org.example.m03uf6.controller.pantallaCarreraController;
  * Clase principal para gestionar el juego de la carrera de caballos.
  */
 public class Juego {
-
     private final int ACORTAR_TABLERO = 0;
     private final int MAX_FILAS = 11 - ACORTAR_TABLERO;
     private final int MAX_COLUMNAS = 5;
@@ -26,7 +25,6 @@ public class Juego {
     public double bote;
     public CardsDeck baraja = new CardsDeck();
     private CardsDeck descartes = new CardsDeck();
-
     Scanner input = new Scanner(System.in);
 
     /**
