@@ -24,52 +24,52 @@
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
                </ImageView>
-               <ImageView id="GOLD10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="GOLD10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_GOLD.png" />
                   </image>
@@ -84,52 +84,52 @@
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                     <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CUPS10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CUPS10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CUPS.png" />
                   </image>
@@ -144,52 +144,52 @@
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
                </ImageView>
-               <ImageView id="CLUBS10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="CLUBS10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_CLUBS.png" />
                   </image>
@@ -204,52 +204,52 @@
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS1" fitHeight="72.0" fitWidth="96.0" layoutX="10.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS2" fitHeight="72.0" fitWidth="96.0" layoutX="58.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS3" fitHeight="72.0" fitWidth="96.0" layoutX="106.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS4" fitHeight="72.0" fitWidth="96.0" layoutX="154.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS5" fitHeight="72.0" fitWidth="96.0" layoutX="202.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS6" fitHeight="72.0" fitWidth="96.0" layoutX="250.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS7" fitHeight="72.0" fitWidth="96.0" layoutX="298.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS8" fitHeight="72.0" fitWidth="96.0" layoutX="346.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS9" fitHeight="72.0" fitWidth="96.0" layoutX="394.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>
                </ImageView>
-               <ImageView id="SWORDS10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <ImageView id="SWORDS10" fitHeight="72.0" fitWidth="96.0" layoutX="442.0" layoutY="10.0" opacity="0.1" pickOnBounds="true" preserveRatio="true" smooth="false">
                   <image>
                      <Image url="@../images/KNIGHT_SWORDS.png" />
                   </image>

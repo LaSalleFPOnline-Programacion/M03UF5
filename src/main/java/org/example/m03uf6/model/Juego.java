@@ -33,7 +33,7 @@ public class Juego {
     public Juego() {
         tablero = new Card[MAX_FILAS][MAX_COLUMNAS];
         inicializaTablero();
-        BaseDatos.insertarBaraja(1, baraja);
+        BaseDatos.insertarCartasEnBaraja(1, baraja);
         inicializaBaraja();
 
     }
@@ -58,8 +58,8 @@ public class Juego {
         for (int i = 2; i < NUM_FILAS_PENALIZACIONES + 2; i++) {
             Card carta = this.baraja.getCardFromDeck();
             tablero[i][NUM_COLUMNAS_PENALIZACIONES] = carta;
-            BaseDatos.eliminarCarta(1, carta);
-            BaseDatos.insertarDescarte(1, carta);
+            BaseDatos.eliminarCartaBaraja(1, carta);
+            BaseDatos.insertarCartaEnDescartes(1, carta);
             this.baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
         }
     }
@@ -185,9 +185,9 @@ public class Juego {
         Card carta = baraja.getCardFromDeck();
         descartes.addCard(carta);
         escribirDescarteEnFichero(carta);
+        BaseDatos.eliminarCartaBaraja(1, carta);
+        BaseDatos.insertarCartaEnDescartes(1, carta);
         baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
-
-        BaseDatos.eliminarCarta(1, carta);
 
         return carta;
     }

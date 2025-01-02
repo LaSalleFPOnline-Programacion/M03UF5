@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.example.m03uf6.model.BaseDatos;
 
 public class pantallaGanadorController {
     private Stage stage;
@@ -20,6 +21,7 @@ public class pantallaGanadorController {
     private Label nombreGanadores;
     @FXML
     public void salirJuego() {
+        BaseDatos.cerrarConexion();
         stage.close();
     }
 

@@ -38,11 +38,11 @@ public class BaseDatos {
         }
     }
 
-    public static void insertarBaraja(int baraja, CardsDeck cardsDeck) {
+    public static void insertarCartasEnBaraja(int baraja, CardsDeck cardsDeck) {
 
-        String insertQuery = "INSERT INTO Baraja (IdBaraja, carta) VALUES (?, ?)";
+        String query = "INSERT INTO Baraja (IdBaraja, carta) VALUES (?, ?)";
 
-        try (PreparedStatement stmt = conexion.prepareStatement(insertQuery)) {
+        try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             for (Card card : cardsDeck.getCards()) {
                 stmt.setInt(1, baraja);
                 stmt.setString(2, card.getCardCode());
@@ -53,11 +53,11 @@ public class BaseDatos {
         }
     }
 
-    public static void insertarDescarte(int baraja, Card carta) {
+    public static void insertarCartaEnDescartes(int baraja, Card carta) {
 
-        String insertQuery = "INSERT INTO Descartes (IdBaraja, carta) VALUES (?, ?)";
+        String query = "INSERT INTO Descartes (IdBaraja, carta) VALUES (?, ?)";
 
-        try (PreparedStatement stmt = conexion.prepareStatement(insertQuery)) {
+        try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             stmt.setInt(1, baraja);
             stmt.setString(2, carta.getCardCode());
             stmt.executeUpdate();
@@ -66,17 +66,32 @@ public class BaseDatos {
         }
     }
 
-    public static void eliminarCarta(int baraja, Card carta) {
+    public static void eliminarCartaBaraja(int baraja, Card carta) {
 
-        String deleteQuery = "DELETE FROM Baraja WHERE IdBaraja = ? and Carta = ?";
+        String query = "DELETE FROM Baraja WHERE IdBaraja = ? and Carta = ?";
 
-        try (PreparedStatement stmt = conexion.prepareStatement(deleteQuery)) {
+        try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             stmt.setInt(1, baraja);
             stmt.setString(2, carta.getCardCode());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void registrarMovimiento(int baraja, Card carta, String posicion) {
+
+        String query = "INSERT INTO Movimientos (IdBaraja, carta, posicion) VALUES (?, ?, ?)";
+
+        try (PreparedStatement stmt = conexion.prepareStatement(query)) {
+            stmt.setInt(1, baraja);
+            stmt.setString(2, carta.getCardCode());
+            stmt.setString(3, posicion);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

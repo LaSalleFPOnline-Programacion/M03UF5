@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import org.example.m03uf6.carreraCaballos;
+import org.example.m03uf6.model.BaseDatos;
 import org.example.m03uf6.model.Juego;
 import org.example.m03uf6.model.Card;
 import org.example.m03uf6.model.CardSuit;
@@ -92,12 +93,15 @@ public class pantallaCarreraController {
             cartaLevantada.setImage(cartaImagen);
 
             int posicionActual = juego.moverCaballoAdelante(carta);
+            BaseDatos.registrarMovimiento(1, carta, carta.getCardSuit().toString() + (posicionActual + 1) );
             actualizarCaballoEnVista(carta.getCardSuit(), posicionActual, posicionActual + 1);
             textoCaballoAvanza.setText("El caballo que avanza es: " + carta.getCardSuit().toString());
             int posicionPenalizacion = juego.chequearPenalizacion();
             if (posicionPenalizacion != 0) {
                 CardSuit paloPenalizacion = juego.getCartaTablero(juego.getFilaPenalizacion()+1,4).getCardSuit();
                 actualizarCaballoEnVista(paloPenalizacion, posicionPenalizacion, posicionPenalizacion - 1);
+                BaseDatos.registrarMovimiento(1, carta, paloPenalizacion.toString() + (posicionPenalizacion - 1) );
+                textoCaballoAvanza.setText("El caballo penalizado es: " + carta.getCardSuit().toString());
             }
             esFinPartida = juego.finPartida();
         } else {
@@ -113,7 +117,7 @@ public class pantallaCarreraController {
         ImageView caballoActual = (ImageView) stage.getScene().lookup(idActual);
         ImageView caballoSiguiente = (ImageView) stage.getScene().lookup(idSiguiente);
         if (caballoActual != null) {
-            caballoActual.setOpacity(0);
+            caballoActual.setOpacity(0.1);
         }
         if (caballoSiguiente != null) {
             caballoSiguiente.setOpacity(1.0);
