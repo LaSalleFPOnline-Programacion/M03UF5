@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.m03uf6.controller.*;
-import org.example.m03uf6.model.Database;
+import org.example.m03uf6.model.*;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ public class carreraCaballos extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        Database.obtenerDatos();
+        BaseDatos.conectar();
 
         FXMLLoader fxmlLoader = new FXMLLoader(carreraCaballos.class.getResource("views/pantallaInicio.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

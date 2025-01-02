@@ -1,4 +1,5 @@
 package org.example.m03uf6.model;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -32,6 +33,7 @@ public class CardsDeck {
         totalCartas = new ArrayList<>();
 
         Collections.shuffle(cardsDeck); /* UNA VEZ CREAMOS LA BARAJA, LA MEZCLAMOS */
+
     }
 
     /**
@@ -45,6 +47,10 @@ public class CardsDeck {
         numcarta = 0; // SI LA BARAJA YA ESTÁ BARAJADA, NO TIENE SENTIDO NO COGER EL PRIMER ELEMENTO.
         carta = cardsDeck.get(numcarta) ;
         return carta;
+    }
+
+    public ArrayList<Card> getCards() {
+        return cardsDeck;
     }
 
     /**

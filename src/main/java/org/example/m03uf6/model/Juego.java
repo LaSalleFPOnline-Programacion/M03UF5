@@ -33,22 +33,9 @@ public class Juego {
     public Juego() {
         tablero = new Card[MAX_FILAS][MAX_COLUMNAS];
         inicializaTablero();
+        BaseDatos.insertarBaraja(1, baraja);
         inicializaBaraja();
 
-        /*
-        int numeroJugadores = getNumeroJugadores();
-        // CREAMOS LOS JUGADORES HUMANOS
-        for (int i = 1; i <= numeroJugadores; i++) {
-            jugadores.add(crearJugador(i));
-            bote = bote + jugadores.get(i - 1).getImporteApuesta();
-        }
-        //RELLENAMOS CON BOTS HASTA 4 JUGADORES
-        for (int i = numeroJugadores + 1; i <= MAX_JUGADORES; i++) {
-            jugadores.add(crearBot(i - numeroJugadores));
-            bote = bote + jugadores.get(i - 1).getImporteApuesta();
-        }
-
-        */
     }
 
     /**
@@ -70,6 +57,7 @@ public class Juego {
 
         for (int i = 2; i < NUM_FILAS_PENALIZACIONES + 2; i++) {
             tablero[i][NUM_COLUMNAS_PENALIZACIONES] = this.baraja.getCardFromDeck();
+            BaseDatos.eliminarCarta(1, this.baraja.getCardFromDeck());
             this.baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
         }
     }
@@ -196,6 +184,9 @@ public class Juego {
         descartes.addCard(carta);
         escribirDescarteEnFichero(carta);
         baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
+
+        BaseDatos.eliminarCarta(1, carta);
+
         return carta;
     }
 
