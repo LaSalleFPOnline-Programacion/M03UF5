@@ -56,8 +56,10 @@ public class Juego {
     public void inicializaBaraja() {
 
         for (int i = 2; i < NUM_FILAS_PENALIZACIONES + 2; i++) {
-            tablero[i][NUM_COLUMNAS_PENALIZACIONES] = this.baraja.getCardFromDeck();
-            BaseDatos.eliminarCarta(1, this.baraja.getCardFromDeck());
+            Card carta = this.baraja.getCardFromDeck();
+            tablero[i][NUM_COLUMNAS_PENALIZACIONES] = carta;
+            BaseDatos.eliminarCarta(1, carta);
+            BaseDatos.insertarDescarte(1, carta);
             this.baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
         }
     }

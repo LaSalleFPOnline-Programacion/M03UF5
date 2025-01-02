@@ -53,6 +53,19 @@ public class BaseDatos {
         }
     }
 
+    public static void insertarDescarte(int baraja, Card carta) {
+
+        String insertQuery = "INSERT INTO Descartes (IdBaraja, carta) VALUES (?, ?)";
+
+        try (PreparedStatement stmt = conexion.prepareStatement(insertQuery)) {
+            stmt.setInt(1, baraja);
+            stmt.setString(2, carta.getCardCode());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void eliminarCarta(int baraja, Card carta) {
 
         String deleteQuery = "DELETE FROM Baraja WHERE IdBaraja = ? and Carta = ?";
