@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>M03-UF5</artifactId>
+    <artifactId>M03-UF6</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>M03-UF5</name>
 
@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>org.example.m03uf5/org.example.m03uf5.carreraCaballos</mainClass>
+                            <mainClass>org.example.m03uf5/org.example.m03uf6.carreraCaballos</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

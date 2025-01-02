@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="500.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.m03uf6.controller.pantallaApuestasController">
+<!-- Top Section -->
+<top>
+    <HBox alignment="CENTER" style="-fx-padding: 10; -fx-background-color: darkgreen;">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Configuración del juego" textFill="WHITE" />
+    </HBox>
+</top>
+
+<!-- Center Section -->
+<center>
+    <VBox alignment="CENTER" spacing="20" style="-fx-padding: 50;">
+        <HBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 16px;" text="Nombre del jugador:" />
+            <TextField fx:id="nombreJugador" promptText="Nombre" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 16px;" text="Selecciona un caballo:" />
+            <ComboBox fx:id="elegirCaballo" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 16px;" text="Importe a apostar:" />
+            <TextField fx:id="importeApostado" promptText="Importe" />
+        </HBox>
+        <Button onAction="#generarBots" prefHeight="0.0" prefWidth="127.0" style="-fx-font-size: 18px;" text="Generar Bots" />
+        <HBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 16px;" text="Bot 1 :" />
+            <TextField fx:id="importeBot1" editable="false" promptText="Importe" />
+            <TextField fx:id="caballoBot1" editable="false" promptText="Caballo" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 16px;" text="Bot 2:" />
+            <TextField fx:id="importeBot2" editable="false" promptText="Importe" />
+            <TextField fx:id="caballoBot2" editable="false" promptText="Caballo" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 16px;" text="Bot 3:" />
+            <TextField fx:id="importeBot3" editable="false" promptText="Importe" />
+            <TextField fx:id="caballoBot3" editable="false" promptText="Caballo" />
+        </HBox>
+    </VBox>
+</center>
+
+<!-- Bottom Section -->
+<bottom>
+    <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10; -fx-background-color: darkgreen;">
+        <Button onAction="#empezarCarrera" style="-fx-font-size: 16px;" text="Empezar carrera" />
+    </HBox>
+</bottom>
+</BorderPane>

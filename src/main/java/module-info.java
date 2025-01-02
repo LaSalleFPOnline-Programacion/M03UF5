@@ -3,8 +3,8 @@ module org.example.m03uf5 {
     requires javafx.fxml;
 
 
-    opens org.example.m03uf5 to javafx.fxml;
-    exports org.example.m03uf5;
-    opens org.example.m03uf5.controller to javafx.fxml;
-    exports org.example.m03uf5.controller;
+    opens org.example.m03uf6 to javafx.fxml;
+    exports org.example.m03uf6;
+    opens org.example.m03uf6.controller to javafx.fxml;
+    exports org.example.m03uf6.controller;
 }
