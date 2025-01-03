@@ -93,14 +93,14 @@ public class pantallaCarreraController {
             cartaLevantada.setImage(cartaImagen);
 
             int posicionActual = juego.moverCaballoAdelante(carta);
-            BaseDatos.registrarMovimiento(1, carta, carta.getCardSuit().toString() + (posicionActual + 1) );
+            BaseDatos.registrarMovimiento(BaseDatos.carrera, carta, carta.getCardSuit().toString(), posicionActual + 1);
             actualizarCaballoEnVista(carta.getCardSuit(), posicionActual, posicionActual + 1);
             textoCaballoAvanza.setText("El caballo que avanza es: " + carta.getCardSuit().toString());
             int posicionPenalizacion = juego.chequearPenalizacion();
             if (posicionPenalizacion != 0) {
                 CardSuit paloPenalizacion = juego.getCartaTablero(juego.getFilaPenalizacion()+1,4).getCardSuit();
                 actualizarCaballoEnVista(paloPenalizacion, posicionPenalizacion, posicionPenalizacion - 1);
-                BaseDatos.registrarMovimiento(1, carta, paloPenalizacion.toString() + (posicionPenalizacion - 1) );
+                BaseDatos.registrarMovimiento(BaseDatos.carrera, carta, paloPenalizacion.toString(), posicionPenalizacion - 1);
                 textoCaballoAvanza.setText("El caballo penalizado es: " + paloPenalizacion.toString());
             }
             esFinPartida = juego.finPartida();

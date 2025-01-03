@@ -7,7 +7,7 @@
 <!-- Top Section -->
 <top>
     <HBox alignment="CENTER" style="-fx-padding: 10; -fx-background-color: darkgreen;">
-        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Configuración del juego" textFill="WHITE" />
+        <Label fx:id="labelCarrera" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Configuración de la carrera " textFill="WHITE" />
     </HBox>
 </top>
 
@@ -26,7 +26,7 @@
             <Label style="-fx-font-size: 16px;" text="Importe a apostar:" />
             <TextField fx:id="importeApostado" promptText="Importe" />
         </HBox>
-        <Button onAction="#generarBots" prefHeight="0.0" prefWidth="127.0" style="-fx-font-size: 18px;" text="Generar Bots" />
+        <Button fx:id="botonGenerarBots" onAction="#generarBots" prefHeight="0.0" prefWidth="127.0" style="-fx-font-size: 18px;" text="Generar Bots" />
         <HBox alignment="CENTER" spacing="10">
             <Label style="-fx-font-size: 16px;" text="Bot 1 :" />
             <TextField fx:id="importeBot1" editable="false" promptText="Importe" />
@@ -48,7 +48,7 @@
 <!-- Bottom Section -->
 <bottom>
     <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10; -fx-background-color: darkgreen;">
-        <Button onAction="#empezarCarrera" style="-fx-font-size: 16px;" text="Empezar carrera" />
+        <Button fx:id="botonCarrera" onAction="#empezarCarrera" style="-fx-font-size: 16px;" text="Empezar carrera" />
     </HBox>
 </bottom>
 </BorderPane>
