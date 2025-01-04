@@ -12,13 +12,13 @@ import org.example.m03uf6.controller.pantallaCarreraController;
  */
 public class Juego {
     private final int ACORTAR_TABLERO = 0;
-    private final int MAX_FILAS = 11 - ACORTAR_TABLERO;
+    public final int MAX_FILAS = 11 - ACORTAR_TABLERO;
     private final int MAX_COLUMNAS = 5;
-    private final int NUM_FILAS_PENALIZACIONES = 8 - ACORTAR_TABLERO;
-    private final int NUM_COLUMNAS_PENALIZACIONES = 4;
+    public final int NUM_FILAS_PENALIZACIONES = 8 - ACORTAR_TABLERO;
+    public final int NUM_COLUMNAS_PENALIZACIONES = 4;
     private final int PRIMERA_CARTA_ALEATORIA = 0;
-    private int filaPenalizacion = MAX_FILAS - 2;
-    private Card[][] tablero;
+    public int filaPenalizacion = MAX_FILAS - 2;
+    public Card[][] tablero;
     public ArrayList<Jugador> jugadores = new ArrayList<>();
     final int MIN_JUGADORES = 1, MAX_JUGADORES = 4;
     final int MIN_APUESTA = 1, MAX_APUESTA = 1000;
@@ -38,7 +38,7 @@ public class Juego {
             // Buscar posiciones
             // Pintar posiciones
         } else {
-            BaseDatos.insertarCartasEnBaraja(BaseDatos.carrera, baraja);
+            BaseDatos.guardarBaraja(BaseDatos.carrera, "baraja", baraja);
             inicializaBaraja();
         }
     }
@@ -63,8 +63,8 @@ public class Juego {
         for (int i = 2; i < NUM_FILAS_PENALIZACIONES + 2; i++) {
             Card carta = this.baraja.getCardFromDeck();
             tablero[i][NUM_COLUMNAS_PENALIZACIONES] = carta;
-            BaseDatos.eliminarCartaBaraja(BaseDatos.carrera, carta);
-            BaseDatos.insertarCartaEnDescartes(BaseDatos.carrera, carta);
+            BaseDatos.eliminarCartaBaraja(BaseDatos.carrera, "baraja", carta);
+            BaseDatos.guardarCartaEnBaraja(BaseDatos.carrera, "penalizaciones", carta);
             this.baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
         }
     }
@@ -190,8 +190,8 @@ public class Juego {
         Card carta = baraja.getCardFromDeck();
         descartes.addCard(carta);
         escribirDescarteEnFichero(carta);
-        BaseDatos.eliminarCartaBaraja(BaseDatos.carrera, carta);
-        BaseDatos.insertarCartaEnDescartes(BaseDatos.carrera, carta);
+        BaseDatos.eliminarCartaBaraja(BaseDatos.carrera, "baraja", carta);
+        BaseDatos.guardarCartaEnBaraja(BaseDatos.carrera, "descartes", carta);
         baraja.removeCard(PRIMERA_CARTA_ALEATORIA);
 
         return carta;
@@ -288,14 +288,12 @@ public class Juego {
                 System.out.println("Penalización con carta: " + carta.getCardCode());
                 int posicionPenalizacion = moverCaballoAtras(carta.suit);
                 filaPenalizacion--;
+                BaseDatos.actualizarEstadoCarrera(BaseDatos.carrera, filaPenalizacion);
                 mostrarTablero();
                 return posicionPenalizacion; /*MAX_FILAS - filaPenalizacion - 1;*/
             }
         }
         return 0;
-        /*System.out.println("Pulse una tecla para continuar...");
-        input.nextLine();*/
-
     }
 
     /**
@@ -356,10 +354,25 @@ public class Juego {
 
     }
 
+    /**
+     * Verifica si quedan cartas en la baraja.
+     *
+     * @return {@code true} si hay cartas disponibles en la baraja; {@code false} en caso contrario.
+     */
     public boolean quedanCartas() {
         return baraja.totalCartas() > 0;
     }
 
+    /**
+     * Determina el caballo ganador en el tablero.
+     * <p>
+     * El método recorre la primera fila del tablero (fila de meta) para verificar si hay un caballo
+     * presente (es decir, si hay un objeto de tipo {@code CardSuit} en alguna de las celdas).
+     * Si encuentra un caballo, devuelve su palo ({@code CardSuit}).
+     * </p>
+     *
+     * @return El {@code CardSuit} del caballo ganador si existe; {@code null} si no hay un ganador.
+     */
     public CardSuit obtenerCaballoGanador() {
         for (int j = 0; j < MAX_COLUMNAS - 1; j++) {
             if (tablero[0][j] != null) {
@@ -369,7 +382,18 @@ public class Juego {
         return null;
     }
 
-        public String obtenerGanador(CardSuit caballoGanador) {
+    /**
+     * Obtiene el ganador o los ganadores basados en el caballo ganador.
+     * <p>
+     * Este método recorre la lista de jugadores y verifica quiénes apostaron por el caballo ganador.
+     * Si hay ganadores, construye un mensaje indicando los nombres de los ganadores y cuánto
+     * obtendrán del bote. Si no hay ganadores, devuelve un mensaje indicando que nadie apostó por el caballo ganador.
+     * </p>
+     *
+     * @param caballoGanador El {@code CardSuit} del caballo ganador.
+     * @return Una cadena que detalla los ganadores y sus premios, o un mensaje si no hubo ganadores.
+     */
+    public String obtenerGanador(CardSuit caballoGanador) {
         boolean hayGanador = false;
         int totalGanadores = 0;
         StringBuilder ganadores = new StringBuilder(); // StringBuilder para construir la cadena
@@ -391,10 +415,22 @@ public class Juego {
         }
     }
 
+    /**
+     * Obtiene la carta del tablero en una posición específica.
+     *
+     * @param i La fila en el tablero.
+     * @param j La columna en el tablero.
+     * @return La {@code Card} que se encuentra en la posición especificada, o {@code null} si no hay carta.
+     */
     public Card getCartaTablero(int i, int j) {
         return this.tablero[i][j];
     }
 
+    /**
+     * Obtiene la fila destinada a las penalizaciones en el tablero.
+     *
+     * @return Un entero que representa la fila de penalización.
+     */
     public int getFilaPenalizacion() {
         return this.filaPenalizacion;
     }

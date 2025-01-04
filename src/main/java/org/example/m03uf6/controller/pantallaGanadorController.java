@@ -33,6 +33,7 @@ public class pantallaGanadorController {
         try {
             Image nuevaImagen = new Image(urlImagen);
             imagenCaballoGanador.setImage(nuevaImagen);
+            BaseDatos.anularPartida(BaseDatos.carrera);
         } catch (IllegalArgumentException e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }

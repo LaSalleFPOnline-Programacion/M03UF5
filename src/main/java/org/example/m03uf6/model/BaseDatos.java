@@ -20,10 +20,8 @@ public class BaseDatos {
 
             try {
                 conexion = DriverManager.getConnection(url, user, password);
-                System.out.println("Conexión correcta.");
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.err.println("Error al conectar a la base de datos: " + e.getMessage());
             }
         }
         return conexion;
@@ -33,10 +31,8 @@ public class BaseDatos {
         if (conexion != null) {
             try {
                 conexion.close();
-                System.out.println("Conexión cerrada.");
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.err.println("Error al cerrar la conexión: " + e.getMessage());
             }
         }
     }
@@ -52,28 +48,27 @@ public class BaseDatos {
             } else {
                 return 0;
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return 0;
     }
 
-    public static void anularPartida(int idCarrera) {
+    public static void anularPartida(int carrera) {
+
         String query = "UPDATE carreras SET Finalizada = -1 WHERE IdCarrera = ?";
 
         try (PreparedStatement stmt = conexion.prepareStatement(query)) {
-            stmt.setInt(1, idCarrera);
+            stmt.setInt(1, carrera);
             stmt.executeUpdate();
-            System.out.println("Partida anulada con éxito.");
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println("Error al anular la partida: " + e.getMessage());
         }
     }
 
     public static int crearNuevaPartida() {
-        String insertQuery = "INSERT INTO carreras (Finalizada) VALUES (0)";
+
+        String insertQuery = "INSERT INTO carreras (Finalizada, FilaPenalizacion) VALUES (0, 9)";
         String selectQuery = "SELECT LAST_INSERT_ID()";
 
         try (Statement stmt = conexion.createStatement()) {
@@ -84,7 +79,6 @@ public class BaseDatos {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println("Error al crear una nueva partida: " + e.getMessage());
         }
         return 0;
     }
@@ -103,7 +97,6 @@ public class BaseDatos {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     public static List<Apuesta> obtenerApuestasPorCarrera(int carrera) {
@@ -113,7 +106,6 @@ public class BaseDatos {
         try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             stmt.setInt(1, carrera);
             ResultSet rs = stmt.executeQuery();
-
             while (rs.next()) {
                 Apuesta apuesta = new Apuesta();
                 apuesta.setNombre(rs.getString("NombreJugador"));
@@ -127,9 +119,9 @@ public class BaseDatos {
         return apuestas;
     }
 
-    public static void insertarCartasEnBaraja(int carrera, CardsDeck cardsDeck) {
+    public static void guardarBaraja(int carrera, String nombreBaraja, CardsDeck cardsDeck) {
 
-        String query = "INSERT INTO baraja (IdCarrera, carta) VALUES (?, ?)";
+        String query = "INSERT INTO " + nombreBaraja + " (IdCarrera, carta) VALUES (?, ?)";
 
         try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             for (Card card : cardsDeck.getCards()) {
@@ -142,9 +134,9 @@ public class BaseDatos {
         }
     }
 
-    public static void insertarCartaEnDescartes(int carrera, Card carta) {
+    public static void guardarCartaEnBaraja(int carrera, String nombreBaraja, Card carta) {
 
-        String query = "INSERT INTO descartes (IdCarrera, carta) VALUES (?, ?)";
+        String query = "INSERT INTO " + nombreBaraja + " (IdCarrera, carta) VALUES (?, ?)";
 
         try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             stmt.setInt(1, carrera);
@@ -155,9 +147,9 @@ public class BaseDatos {
         }
     }
 
-    public static void eliminarCartaBaraja(int carrera, Card carta) {
+    public static void eliminarCartaBaraja(int carrera, String nombreBaraja, Card carta) {
 
-        String query = "DELETE FROM baraja WHERE IdCarrera = ? and Carta = ?";
+        String query = "DELETE FROM " + nombreBaraja + " WHERE IdCarrera = ? and Carta = ?";
 
         try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             stmt.setInt(1, carrera);
@@ -190,16 +182,65 @@ public class BaseDatos {
         try (PreparedStatement stmt = conexion.prepareStatement(query)) {
             stmt.setInt(1, carrera);
             stmt.setString(2, caballo);
-
             ResultSet rs = stmt.executeQuery();
-
             if (rs.next()) {
-                int posicion = rs.getInt("Posicion");
-                return posicion;
+                return rs.getInt("Posicion");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return 0;
     }
+
+    public static void actualizarEstadoCarrera(int carrera, int filaPenalizacion) {
+
+        String query = "UPDATE carreras SET FilaPenalizacion = ? WHERE IdCarrera = ?";
+
+        try (PreparedStatement stmt = conexion.prepareStatement(query)) {
+            stmt.setInt(1, filaPenalizacion);
+            stmt.setInt(2, carrera);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static int obtenerFilaPenalizacionCarrera(int carrera) {
+
+        String query = "SELECT FilaPenalizacion FROM carreras WHERE IdCarrera = ?";
+
+        try (PreparedStatement stmt = conexion.prepareStatement(query)) {
+            stmt.setInt(1, carrera);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("FilaPenalizacion");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public static List<Card> obtenerCartasPenalizadoras(int carrera) {
+        List<Card> penalizaciones = new ArrayList<>();
+        String query = "SELECT Carta FROM penalizaciones WHERE idCarrera = ?";
+
+        try (PreparedStatement stmt = conexion.prepareStatement(query)) {
+            stmt.setInt(1, carrera);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String cardCode = rs.getString("Carta");
+                Card penalizacion = Card.crearCard(cardCode);
+                if (penalizacion != null) {
+                    penalizaciones.add(penalizacion);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return penalizaciones;
+    }
+
 }
